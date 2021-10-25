@@ -5,10 +5,10 @@ const router = express.Router();
 const cors = require('cors');
 
 app.use(cors());
+app.use(express.static(path.join(__dirname + '/public')));
 
-router.get('/', function (req, res) {
+app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
-  //__dirname : It will resolve to your project folder.
 });
 
 //add the router
